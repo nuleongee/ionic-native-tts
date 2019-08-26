@@ -1,9 +1,26 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Speach Rescognition
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-label color="primary">Speach Rescognition</ion-label>
+  <ion-item>
+    <ion-textarea [(ngModel)]="rescogText">{{rescogText}}</ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-button size="small" color="primary" (click)="check()">check</ion-button>
+    <ion-button size="small" color="primary" (click)="language()">Language</ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-button size="small" color="primary" (click)="checkPermission()">Check Permission</ion-button>
+    <ion-button size="small" color="primary" (click)="requestPermission()">RequestPermission</ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-button size="small" color="success" (click)="start()">Start</ion-button>
+    <ion-button size="small" color="danger" (click)="stop()">Stop</ion-button>
+  </ion-item>
+</ion-content>
