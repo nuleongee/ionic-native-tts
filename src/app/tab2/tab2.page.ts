@@ -7,7 +7,8 @@ import { SpeechRecognition } from '@ionic-native/speech-recognition/ngx';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-  rescogText: string;
+  private recogText: string;
+  private language: string = "ko-KR";
 
   constructor(private speechRecognition: SpeechRecognition) { }
 
@@ -19,7 +20,7 @@ export class Tab2Page {
 
   start() {
     const options = {
-      language: "ko-KR",
+      language: this.language,
       // matches : 5,
       prompt: 'Listening...',
       showPopup: true,
@@ -31,13 +32,14 @@ export class Tab2Page {
         (matches: string[]) => {
           console.log('matches: ', matches);
           console.log('matches[0]: ', matches[0]);
-          this.rescogText = matches[0];
+          this.recogText = matches[0];
+          console.log('recogText : ', this.recogText);
         },
         (onerror) => console.log('error:', onerror)
       )
   }
 
-  language() {
+  languageList() {
     // Get the list of supported languages
     this.speechRecognition.getSupportedLanguages()
       .then(
@@ -59,5 +61,13 @@ export class Tab2Page {
         () => console.log('Granted'),
         () => console.log('Denied')
       )
+  }
+
+  ko() {
+    this.language = "ko-KR";
+  }
+
+  en() {
+    this.language = "en-US";
   }
 }

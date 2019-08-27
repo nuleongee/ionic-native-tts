@@ -9,15 +9,19 @@
 <ion-content>
   <ion-label color="primary">Speach Rescognition</ion-label>
   <ion-item>
-    <ion-textarea [(ngModel)]="rescogText">{{rescogText}}</ion-textarea>
+    <ion-textarea value="recogText" [(ngModel)]="recogText"></ion-textarea>
   </ion-item>
   <ion-item>
     <ion-button size="small" color="primary" (click)="check()">check</ion-button>
-    <ion-button size="small" color="primary" (click)="language()">Language</ion-button>
+    <ion-button size="small" color="primary" (click)="language()">languageList</ion-button>
   </ion-item>
   <ion-item>
     <ion-button size="small" color="primary" (click)="checkPermission()">Check Permission</ion-button>
     <ion-button size="small" color="primary" (click)="requestPermission()">RequestPermission</ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-button size="small" color="tertiary" (click)="ko()">Korean</ion-button>
+    <ion-button size="small" color="tertiary" (click)="en()">English</ion-button>
   </ion-item>
   <ion-item>
     <ion-button size="small" color="success" (click)="start()">Start</ion-button>
